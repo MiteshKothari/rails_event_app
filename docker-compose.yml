@@ -1,0 +1,41 @@
+name: events_voting
+
+services:
+  db:
+    image: postgres:16.3
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: events_voting_development
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      RAILS_ENV: development
+      BILLETTO_ACCESS_KEY_ID: ${BILLETTO_ACCESS_KEY_ID:-}
+      BILLETTO_ACCESS_KEY_SECRET: ${BILLETTO_ACCESS_KEY_SECRET:-}
+      CLERK_SECRET_KEY: ${CLERK_SECRET_KEY:-}
+      CLERK_PUBLISHABLE_KEY: ${CLERK_PUBLISHABLE_KEY:-}
+      CLERK_SIGN_IN_URL: ${CLERK_SIGN_IN_URL:-}
+      DATABASE_HOST: db
+      DATABASE_PORT: 5432
+      DATABASE_USERNAME: postgres
+      DATABASE_PASSWORD: postgres
+    depends_on:
+      db:
+        condition: service_healthy
+    command: ["sh", "-c", "./bin/rails db:prepare && exec ./bin/rails server -b 0.0.0.0"]
+
+volumes:
+  pgdata:

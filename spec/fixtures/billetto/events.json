@@ -1,0 +1,25 @@
+{
+  "object": "list",
+  "data": [
+    {
+      "id": "1",
+      "object": "public_event",
+      "state": "published",
+      "title": "Rails Meetup Copenhagen",
+      "description": "A community meetup for Ruby on Rails developers.",
+      "image_link": "https://images.billetto.example/rails-meetup.jpg",
+      "startdate": "2026-09-15T18:00:00Z",
+      "enddate": "2026-09-15T21:00:00Z"
+    },
+    {
+      "id": "2",
+      "object": "public_event",
+      "state": "published",
+      "title": "Autumn Jazz Festival",
+      "description": "An evening of live jazz performances.",
+      "image_link": "https://images.billetto.example/jazz-festival.jpg",
+      "startdate": "2026-10-02T19:30:00Z",
+      "enddate": "2026-10-02T23:00:00Z"
+    }
+  ]
+}

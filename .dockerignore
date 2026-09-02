@@ -1,0 +1,7 @@
+.git
+log/*
+tmp/*
+storage/*
+*.md
+docs/
+.env

@@ -1,0 +1,17 @@
+/.superpowers/
+
+# Ignore key files for decrypting credentials and more.
+/config/*.key
+
+# Ignore generated storage/log files
+/log/*
+!/log/.keep
+
+/storage/*
+!/storage/.keep
+
+/tmp/*
+!/tmp/.keep
+
+# Ignore local environment file with secrets
+/.env

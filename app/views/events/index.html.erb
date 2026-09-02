@@ -1,0 +1,20 @@
+<h1>Events</h1>
+
+<ul class="events-list">
+  <% @events.each do |event| %>
+    <li class="event-card">
+      <h2><%= event.title %></h2>
+      <p class="event-card__date"><%= event.starts_at.strftime("%B %-d, %Y %H:%M") %></p>
+      <% if event.image_url.present? %>
+        <%= image_tag event.image_url, alt: event.title %>
+      <% end %>
+      <p><%= event.description %></p>
+      <div class="event-card__votes">
+        <%= button_to "Upvote", event_votes_path(event), params: { direction: "up" }, method: :post, class: "vote-up" %>
+        <span class="vote-count">Up: <%= event.vote_tally&.up_count || 0 %></span>
+        <%= button_to "Downvote", event_votes_path(event), params: { direction: "down" }, method: :post, class: "vote-down" %>
+        <span class="vote-count">Down: <%= event.vote_tally&.down_count || 0 %></span>
+      </div>
+    </li>
+  <% end %>
+</ul>

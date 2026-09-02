@@ -1,0 +1,155 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  color: #1a1a1a;
+  background: #f7f7f8;
+  line-height: 1.5;
+}
+
+a {
+  color: #2563eb;
+}
+
+.site-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: #fff;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.site-header form {
+  margin: 0;
+  display: inline;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.flash {
+  max-width: 720px;
+  margin: 1rem auto 0;
+  padding: 0 1.5rem;
+}
+
+.notice, .alert {
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.notice {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.alert {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+.events-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.event-card {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 1.25rem;
+}
+
+.event-card h2 {
+  margin: 0 0 0.25rem;
+  font-size: 1.15rem;
+}
+
+.event-card__date {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 0 0 0.75rem;
+}
+
+.event-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+}
+
+.event-card__votes {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.event-card__votes form {
+  margin: 0;
+}
+
+.vote-count {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+button, input[type="submit"] {
+  font: inherit;
+  padding: 0.4rem 0.9rem;
+  border-radius: 6px;
+  border: 1px solid #d4d4d4;
+  background: #fff;
+  cursor: pointer;
+}
+
+button:hover, input[type="submit"]:hover {
+  background: #f2f2f2;
+}
+
+.vote-up {
+  border-color: #16a34a;
+  color: #16a34a;
+}
+
+.vote-down {
+  border-color: #dc2626;
+  color: #dc2626;
+}
+
+form.session-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 320px;
+}
+
+form.session-form label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+form.session-form input[type="email"] {
+  padding: 0.5rem;
+  border: 1px solid #d4d4d4;
+  border-radius: 6px;
+  font: inherit;
+}
